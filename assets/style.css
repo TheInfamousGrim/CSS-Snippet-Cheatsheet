@@ -1,5 +1,19 @@
+:root {
+  --yellow-text: #e9ff70;
+  --white: #fffcf2;
+  --background: #ff9770;
+  --code-bg: #ff70a6;
+  --brdr-radius: 5px;
+  --gradient-color: rgb(255, 77, 144) 0%, rgb(255, 128, 176) 100%;
+  --min-crd-cnt-width: 27%;
+  --max-crd-cnt-width: 90%;
+}
+
 body {
   font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,5 +24,139 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px 15%;
+  margin: 20px;
+  color: var(--white);
+}
+
+.page-title,
+.page-explanation {
+  align-items: center;
+  text-align: center;
+}
+
+.page-title {
+  margin-bottom: 10px;
+  font-size: 1.75em;
+  color: var(--yellow-text);
+}
+
+.page-explanation {
+  margin-bottom: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: stretch;
+  margin: 10px 10px;
+}
+
+/* First row has a lower flex growth */
+
+.flex-row-container,
+.flex-col-container,
+.CSS-grid-container {
+  flex: 1 1 0px;
+}
+
+/* Second Row has a higher flex growth so it can fit more content */
+
+.gradients-container,
+.box-transition-container,
+.overlay-card-container {
+  flex: 1 1 0px;
+}
+
+/* cards */
+.flex-row-container,
+.flex-col-container,
+.CSS-grid-container,
+.gradients-container,
+.box-transition-container,
+.overlay-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  margin: 15px 10px;
+  border: 0.15rem dashed var(--white);
+  max-width: 90vw;
+  min-width: 30vw;
+}
+
+/* tablets */
+@media only screen and (max-width: 990px) {
+  .flex-row-container,
+  .flex-col-container,
+  .CSS-grid-container,
+  .gradients-container,
+  .box-transition-container,
+  .overlay-card-container {
+    max-width: 90vw;
+    min-width: 45vw;
+  }
+}
+
+/* phones */
+@media only screen and (max-width: 662px) {
+  .flex-row-container,
+  .flex-col-container,
+  .CSS-grid-container,
+  .gradients-container,
+  .box-transition-container,
+  .overlay-card-container {
+    min-width: 90vw;
+  }
+}
+
+/* card titles */
+.snippet-title-container {
+  color: var(--yellow-text);
+  background-color: var(--background);
+  border: 0.2rem solid var(--white);
+  border-radius: var(--brdr-radius);
+  min-width: var(--max-crd-cnt-width);
+  align-self: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 3px;
+  position: relative;
+  margin-top: -20px;
+}
+
+.snippet-explainer {
+  color: var(--yellow-text);
+  font-size: 0.7rem;
+  align-self: center;
+  margin: 10px 10px 2px 10px;
+}
+
+/* containers holding the written down code for each specified action */
+.code-snippet-container {
+  background-image: linear-gradient(
+    rgb(255, 77, 144) 0%,
+    rgb(255, 128, 176) 100%
+  );
+  border-radius: var(--brdr-radius);
+  min-width: var(--max-crd-cnt-width);
+  max-width: var(--max-crd-cnt-width);
+  align-self: center;
+  margin: 2px 10px 10px 10px;
+  flex-grow: 2;
+  display: flex;
+}
+
+#code {
+  margin: 10px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.7rem;
+  align-self: center;
+  line-height: 2em;
+}
+
+footer {
+  margin-bottom: 60px;
+  text-align: center;
+  color: var(--yellow-text);
 }
